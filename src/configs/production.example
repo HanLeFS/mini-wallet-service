@@ -1,0 +1,18 @@
+{
+  "env": "development",
+  "dbConfig": {
+      "type": "uri",
+      "uri": "",
+      "host": "",
+      "database": "",
+      "port": ""
+  },
+  "log": {
+      "format": "dev",
+      "dir": "../logs"
+  },
+  "cors": {
+      "origin": true,
+      "credentials": true
+  }
+}

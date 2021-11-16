@@ -1,0 +1,104 @@
+tags:
+- name: wallets
+  description: wallets API
+
+paths:
+# [GET] wallets/address
+  /wallets/{address}:
+    get:
+      tags:
+      - wallets
+      summary: Find Wallet By Address
+      parameters:
+      - name: address
+        in: path
+        description: ETH Address
+        required: true
+      responses:
+        200:
+          description: 'OK'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+    put:
+      tags:
+      - wallets
+      summary: Update wallet balance
+      parameters:
+      - name: "address"
+        in: "path"
+        description: "ETH address"
+        required: true
+        type: "string"
+      - name: "balance"
+        in: "formData"
+        description: "ETH balance in Wallet"
+        required: true
+        type: "number"
+      responses:
+        200:
+          description: 'Updated'
+        400:
+          description: 'Bad Request'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+    delete:
+      tags:
+      - wallets
+      summary: Delete wallet by address
+      parameters:
+      - name: address
+        in: path
+        description: ETH Address
+        required: true
+      responses:
+        200:
+          description: 'OK'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+
+# [POST] wallets
+  /wallets:
+    post:
+      tags:
+      - wallets
+      summary: Create Wallet
+      parameters:
+      - name: body
+        in: body
+        description: wallet Data
+        required: true
+        schema:
+          $ref: '#/definitions/wallets'
+      responses:
+        201:
+          description: 'Created'
+        400:
+          description: 'Bad Request'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+
+# definitions
+definitions:
+  wallets:
+    type: object
+    required:
+        - wallet_address
+        - balance
+    properties:
+      wallet_address:
+        description: ETH Address
+      balance:
+        type: number
+        description: balance of Wallet
+
+schemes:
+ - https
+ - http

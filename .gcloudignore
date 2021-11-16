@@ -1,0 +1,9 @@
+.gcloudignore
+.git
+.gitignore
+node_modules/
+scripts
+dist
+DS_Store
+logs
+tests

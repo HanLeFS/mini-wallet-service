@@ -1,0 +1,18 @@
+{
+  "env": "test",
+  "dbConfig": {
+    "type": "normal",
+    "host": "localhost",
+    "database": "test",
+    "port": 27017
+  },
+  "secretKey": "secretKey",
+  "log": {
+      "format": "dev",
+      "dir": "../logs"
+  },
+  "cors": {
+      "origin": true,
+      "credentials": true
+  }
+}

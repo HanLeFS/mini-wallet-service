@@ -1,0 +1,10 @@
+runtime: nodejs12
+instance_class: F1
+
+env_variables:
+  NODE_ENV: "production"
+  PORT: 8080
+  DB_URI: ""
+  DB_HOST: "localhost"
+  DB_PORT: 27017
+  DB_NAME: "xload_local"
